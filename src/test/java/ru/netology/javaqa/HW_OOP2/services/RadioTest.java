@@ -1,3 +1,4 @@
+package ru.netology.javaqa.HW_OOP2
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

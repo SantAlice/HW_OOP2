@@ -1,3 +1,5 @@
+package ru.netology.javaqa.HW_OOP2
+
 public class Radio {
 
     private int currentStation;
