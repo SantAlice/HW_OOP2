@@ -1,10 +1,10 @@
-package ru.netology.javaqa.HW_OOP2
+package ru.netology.javaqa.HW_OOP2.services;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RadioTest {
+ public class RadioTest {
 
     @Test
     public void testingStationSetter() {

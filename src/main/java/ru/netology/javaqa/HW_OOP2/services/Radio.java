@@ -1,4 +1,4 @@
-package ru.netology.javaqa.HW_OOP2
+package ru.netology.javaqa.HW_OOP2.services;
 
 public class Radio {
 
