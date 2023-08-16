@@ -1,10 +1,11 @@
 package ru.netology.javaqa.HW_OOP2.services;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
- public class RadioTest {
+public class RadioTest {
 
     @Test //тестируем выставление текущей станции
     public void testingStationSetter() {
@@ -355,7 +356,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
     @Test //тестируем возможность выставить сколичество станций + выставить текущую
-     public void shouldSetMax(){
+    public void shouldSetMax() {
         Radio radio = new Radio(43);
 
         radio.setCurrentStation(34);
@@ -364,185 +365,185 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         int expected = 34;
     }
 
-     @Test //тестируем минимальные пограничные значения сеттера, регресс
-     public void shouldSetMaxBoundary(){
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные пограничные значения сеттера, регресс
+    public void shouldSetMaxBoundary() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(0);
+        radio.setCurrentStation(0);
 
-         int actual = radio.getCurrentVolume();
-         int expected = 0;
-     }
+        int actual = radio.getCurrentVolume();
+        int expected = 0;
+    }
 
-     @Test //тестируем минимальные пограничные значения сеттера, регресс
-     public void shouldSetMaxBoundary2(){
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные пограничные значения сеттера, регресс
+    public void shouldSetMaxBoundary2() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(1);
+        radio.setCurrentStation(1);
 
-         int actual = radio.getCurrentVolume();
-         int expected = 1;
-     }
+        int actual = radio.getCurrentVolume();
+        int expected = 1;
+    }
 
-     @Test //тестируем максимальные пограничные значения сеттера, регресс
-     public void shouldSetMaxBoundary3(){
-         Radio radio = new Radio(43);
+    @Test //тестируем максимальные пограничные значения сеттера, регресс
+    public void shouldSetMaxBoundary3() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(43);
+        radio.setCurrentStation(43);
 
-         int actual = radio.getCurrentVolume();
-         int expected = 43;
-     }
+        int actual = radio.getCurrentVolume();
+        int expected = 43;
+    }
 
-     @Test //тестируем максимальные пограничные значения сеттера, регресс
-     public void shouldSetMaxBoundary4(){
-         Radio radio = new Radio(43);
+    @Test //тестируем максимальные пограничные значения сеттера, регресс
+    public void shouldSetMaxBoundary4() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(42);
+        radio.setCurrentStation(42);
 
-         int actual = radio.getCurrentVolume();
-         int expected = 42;
-     }
+        int actual = radio.getCurrentVolume();
+        int expected = 42;
+    }
 
-     @Test //тестируем эквивалентные значения next, регресс
-     public void shouldSetNext() {
-         Radio radio = new Radio(43);
+    @Test //тестируем эквивалентные значения next, регресс
+    public void shouldSetNext() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(34);
+        radio.setCurrentStation(34);
 
-         radio.next();
+        radio.next();
 
-         int actual = radio.getCurrentStation();
-         int expected = 35;
+        int actual = radio.getCurrentStation();
+        int expected = 35;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем максимальные эквивалентные значения next, регресс
-     public void shouldSetNextBoundary() {
-         Radio radio = new Radio(43); //т.к это не цифра станий, а их количество
+    @Test //тестируем максимальные эквивалентные значения next, регресс
+    public void shouldSetNextBoundary() {
+        Radio radio = new Radio(43); //т.к это не цифра станий, а их количество
 
-         radio.setCurrentStation(41); //последняя получается 42, т.к макс станция это количество -1
+        radio.setCurrentStation(41); //последняя получается 42, т.к макс станция это количество -1
 
-         radio.next();
+        radio.next();
 
-         int actual = radio.getCurrentStation();
-         int expected = 42;
+        int actual = radio.getCurrentStation();
+        int expected = 42;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем максимальные эквивалентные значения next, регресс
-     public void shouldSetNextBoundary2() {
-         Radio radio = new Radio(43); //т.к это не цифра станий, а их количество
+    @Test //тестируем максимальные эквивалентные значения next, регресс
+    public void shouldSetNextBoundary2() {
+        Radio radio = new Radio(43); //т.к это не цифра станий, а их количество
 
-         radio.setCurrentStation(42); //последняя получается 42, т.к макс станция это количество -1
+        radio.setCurrentStation(42); //последняя получается 42, т.к макс станция это количество -1
 
-         radio.next();
+        radio.next();
 
-         int actual = radio.getCurrentStation();
-         int expected = 0;
+        int actual = radio.getCurrentStation();
+        int expected = 0;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем минимальные эквивалентные значения next, регресс
-     public void shouldSetNextBoundary3() {
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные эквивалентные значения next, регресс
+    public void shouldSetNextBoundary3() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(0);
+        radio.setCurrentStation(0);
 
-         radio.next();
+        radio.next();
 
-         int actual = radio.getCurrentStation();
-         int expected = 1;
+        int actual = radio.getCurrentStation();
+        int expected = 1;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем минимальные эквивалентные значения next, регресс
-     public void shouldSetNextBoundary4() {
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные эквивалентные значения next, регресс
+    public void shouldSetNextBoundary4() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(1);
+        radio.setCurrentStation(1);
 
-         radio.next();
+        radio.next();
 
-         int actual = radio.getCurrentStation();
-         int expected = 2;
+        int actual = radio.getCurrentStation();
+        int expected = 2;
 
-         Assertions.assertEquals(actual, expected);
-     }
-     //тестируем prev
+        Assertions.assertEquals(actual, expected);
+    }
+    //тестируем prev
 
-     @Test //тестируем эквивалетные значения prev, регресс
-     public void shouldSetPrev() {
-         Radio radio = new Radio(43);
+    @Test //тестируем эквивалетные значения prev, регресс
+    public void shouldSetPrev() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(34);
+        radio.setCurrentStation(34);
 
-         radio.prev();
+        radio.prev();
 
-         int actual = radio.getCurrentStation();
-         int expected = 33;
+        int actual = radio.getCurrentStation();
+        int expected = 33;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем максимальные пограничные значения prev, регресс
-     public void shouldSetPrevBoundary1() {
-         Radio radio = new Radio(43);
+    @Test //тестируем максимальные пограничные значения prev, регресс
+    public void shouldSetPrevBoundary1() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(42);
+        radio.setCurrentStation(42);
 
-         radio.prev();
+        radio.prev();
 
-         int actual = radio.getCurrentStation();
-         int expected = 41;
+        int actual = radio.getCurrentStation();
+        int expected = 41;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем максимальные пограничные значения prev, регресс
-     public void shouldSetPrevBoundary2() {
-         Radio radio = new Radio(43);
+    @Test //тестируем максимальные пограничные значения prev, регресс
+    public void shouldSetPrevBoundary2() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(41);
+        radio.setCurrentStation(41);
 
-         radio.prev();
+        radio.prev();
 
-         int actual = radio.getCurrentStation();
-         int expected = 40;
+        int actual = radio.getCurrentStation();
+        int expected = 40;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем минимальные пограничные значения prev, регресс
-     public void shouldSetPrevBoundary3() {
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные пограничные значения prev, регресс
+    public void shouldSetPrevBoundary3() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(0);
+        radio.setCurrentStation(0);
 
-         radio.prev();
+        radio.prev();
 
-         int actual = radio.getCurrentStation();
-         int expected = 42;
+        int actual = radio.getCurrentStation();
+        int expected = 42;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 
-     @Test //тестируем минимальные пограничные значения prev, регресс
-     public void shouldSetPrevBoundary4() {
-         Radio radio = new Radio(43);
+    @Test //тестируем минимальные пограничные значения prev, регресс
+    public void shouldSetPrevBoundary4() {
+        Radio radio = new Radio(43);
 
-         radio.setCurrentStation(1);
+        radio.setCurrentStation(1);
 
-         radio.prev();
+        radio.prev();
 
-         int actual = radio.getCurrentStation();
-         int expected = 0;
+        int actual = radio.getCurrentStation();
+        int expected = 0;
 
-         Assertions.assertEquals(actual, expected);
-     }
+        Assertions.assertEquals(actual, expected);
+    }
 }
 

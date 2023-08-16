@@ -7,11 +7,11 @@ public class Radio {
     private int maxStation;
 
     public Radio() {
-    maxStation =9;
+        maxStation = 9;
     }
 
-    public Radio(int stationsCount){
-    maxStation = stationsCount - 1;
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
     }
 
     public void next() {
@@ -28,9 +28,7 @@ public class Radio {
         }*/
         if (currentStation != 0) {
             currentStation--;
-        }
-
-        else {
+        } else {
             currentStation = maxStation;
         }
         /*if (currentStation == maxStation) { Мои провальные попытки)) х2
